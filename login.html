@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+
+  <style>
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 100px;
+    }
+    label {
+      margin-bottom: 10px;
+    }
+    input[type="text"], input[type="password"] {
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 5px 10px;
+    }
+    body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .form-wrapper {
+    width: 300px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+  }
+  
+  .form-group input[type="text"]:focus,
+  .form-group input[type="password"]:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  .submit-button {
+    width: 100%;
+    padding: 8px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  .alert {
+  display: none;
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+  }
+
+.alert.hidden {
+  display: none;
+}
+  </style>
+</head>
+
+<body class="container">
+  <div class="form-wrapper">
+    <div class="form-title">Login Form</div>
+    <form  class="form-group" action="/login" method="post">
+      <label for="username">Nom d'utilisateur</label>
+      <input type="text" id="username" name="username" required>
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" name="password" required>
+      <button class="submit-button" type="submit">Se connecter</button>
+      <div id="alert-msg" class="alert hidden">Identifiants incorrects</div>
+    </form>
+  </div>
+  
+</body>
+</html>

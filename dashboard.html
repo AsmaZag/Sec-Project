@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  .widgets {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .widget {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .charts {
+    text-align: center;
+  }
+  
+  canvas {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+  }
+  
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Tableau de bord</h1>
+    <nav>
+      <ul>
+        <li><a href="Profil.html">Profil</a></li>
+        <li><a href="Paramètres.html">Paramètres</a></li>
+        <li><a href="Logout">Déconnexion</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="widgets">
+      <div class="widget">
+        <h2>Widget 1</h2>
+        <p>Contenu du widget 1</p>
+      </div>
+      <div class="widget">
+        <h2>Widget 2</h2>
+        <p>Contenu du widget 2</p>
+      </div>
+    </section>
+    <section class="charts">
+      <h2>Graphiques</h2>
+      <canvas id="chart"></canvas>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
