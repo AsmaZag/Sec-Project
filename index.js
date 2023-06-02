@@ -2,6 +2,7 @@ const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const fs = require('fs');
+const { profile } = require('console');
 
 const app = express();
 
@@ -68,18 +69,47 @@ app.get('/logout', (req, res) => {
   req.session.isAuthenticated = false;
   res.redirect('/login');
 });
+
+// app.get('/Profil', (req, res) => {
+//     const page = 'Profil.html';
+//     if (req.session.isAuthenticated){
+//       res.sendFile(`${page}`, { root: __dirname + '/' }, (err) => {
+//         if (err) {
+//             console.error(err);
+//             res.status(404).send('Page not found');
+//           }
+//       });
+//     }
+// });
+
+// app.get('/Parametres', (req, res) => {
+//   const page = 'Paramètres.html';
+//   if (req.session.isAuthenticated){
+//     res.sendFile(`${page}`, { root: __dirname + '/' }, (err) => {
+//       if (err) {
+//           console.error(err);
+//           res.status(404).send('Page not found');
+//         }
+//     });
+//   }
+// });
+// app.get('/profile-picture.jpg', (req, res) => {
+//   const page = 'profile-picture.jpg';
+//   res.sendFile(`${page}`, { root: __dirname + '/' })
+// });
+
+
+//La fonction qui crée la vulnerabilité
 app.get('/:nomPage', (req, res) => {
   const nomPage = req.params.nomPage;
   if (req.session.isAuthenticated){
-    res.sendFile(`${nomPage}`, { root: __dirname + '/' }, (err) => {
+     res.sendFile(`${nomPage}`, { root: __dirname + '/' }, (err) => {
       if (err) {
         console.error(err);
         res.status(404).send('Page not found');
       }
     });
-  
-  
-  }
+ }
 });
 // Port d'écoute du serveur
 const port = 3000;
